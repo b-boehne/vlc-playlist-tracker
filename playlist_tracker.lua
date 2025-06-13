@@ -1,6 +1,5 @@
 local config = {
     state_file = "vlc_playlist_state.txt",
-    auto_save_interval = 30 -- seconds
 }
 
 function load_state()
