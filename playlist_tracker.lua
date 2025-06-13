@@ -1,12 +1,8 @@
--- playlist_tracker.lua
-
--- Configuration
 local config = {
     state_file = "vlc_playlist_state.txt",
     auto_save_interval = 30 -- seconds
 }
 
--- State management
 function load_state()
     local file = io.open(config.state_file, "r")
     local state = nil
@@ -25,7 +21,6 @@ function save_state(state)
     end
 end
 
--- Event handlers
 function descriptor()
     return {
         title = "Playlist Tracker",
@@ -48,7 +43,6 @@ function update_state()
 end
 
 function activate()
-    -- Load initial state
     local state = load_state()
     if state then
         vlc.playlist.goto(state)
